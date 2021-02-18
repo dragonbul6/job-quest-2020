@@ -48,8 +48,35 @@ function shift(arr, dir, pos) {
   return newArr;
 }
 
-function secondMax() {}
+function secondMax(arr) {
+  var max = 0;
+  var sec = 0;
 
-function fizzBuzz() {}
+  if (arr.length == 0) {
+    return "Error!";
+  }
 
-console.log(shift([1, 2, 3, 4, 5], "right", 3));
+  //  find max
+  arr.map((n) => {
+    if (n > max) {
+      max = n;
+    }
+  });
+
+  // find second
+  arr.map((n) => {
+    if (sec < n && n != max) {
+      sec = n;
+    }
+  });
+
+  if (sec == 0) {
+    sec = max;
+  }
+
+  return sec;
+}
+
+function fizzBuzz(num) {}
+
+console.log(secondMax([]));
