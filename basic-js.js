@@ -77,6 +77,12 @@ function secondMax(arr) {
   return sec;
 }
 
-function fizzBuzz(num) {}
+function fizzBuzz(num) {
+  var three = ["Fizz", ""];
+  var five = ["Buzz", ""];
 
-console.log(secondMax([]));
+  var result3 = num % 3;
+  var result5 = num % 5;
+
+  return three[result3] + five[result5];
+}
