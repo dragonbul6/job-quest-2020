@@ -20,10 +20,36 @@ function fib(num) {
   return arr[num - 1];
 }
 
-function shift() {}
+function shift(arr, dir, pos) {
+  var shifted = [];
+  var temp = [];
+  var newArr = [];
+  if (dir == "left") {
+    //   push temp
+    for (let index = 0; index < pos; index++) {
+      temp.push(arr[index]);
+    }
+    // push shifted
+    for (let index = pos; index < arr.length; index++) {
+      shifted.push(arr[index]);
+    }
+    newArr = shifted.concat(temp);
+  } else {
+    //   Assign to temp
+    for (let index = pos - 1; index < arr.length; index++) {
+      shifted.push(arr[index]);
+    }
+    for (let index = 0; index < pos - 1; index++) {
+      temp.push(arr[index]);
+    }
+    newArr = shifted.concat(temp);
+  }
+
+  return newArr;
+}
 
 function secondMax() {}
 
 function fizzBuzz() {}
 
-console.log(fib(12));
+console.log(shift([1, 2, 3, 4, 5], "right", 3));
